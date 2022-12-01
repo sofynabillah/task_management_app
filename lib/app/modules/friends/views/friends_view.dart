@@ -66,7 +66,7 @@ class FriendsView extends GetView<FriendsController> {
                             ],
                           ),
                           const Spacer(),
-                          const Icon(Ionicons.notifications,
+                          const Icon(Icons.notifications,
                               color: AppColors.primaryText, size: 30),
                           const SizedBox(
                             width: 15,
@@ -152,7 +152,7 @@ class FriendsView extends GetView<FriendsController> {
                                               ),
                                             ),
                                             child: Icon(
-                                              Ionicons.add_circle_outline,
+                                              Icons.add_circle_outline,
                                             )),
                                       ),
                                     ),

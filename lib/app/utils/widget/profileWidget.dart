@@ -59,7 +59,7 @@ class ProfileWidget extends StatelessWidget {
                   ClipRRect(
                     child: CircleAvatar(
                       backgroundColor: Colors.amber,
-                      radius: 100,
+                      radius: 70,
                       foregroundImage: NetworkImage(
                         'https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/27/08/jennifer-lawrence.jpg?quality=75&width=982&height=726&auto=webp%27',
                       ),
@@ -81,7 +81,7 @@ class ProfileWidget extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          'aliciajasmine@gmail.com',
+                          '   aliciajasmine@gmail.com',
                           style: TextStyle(
                             color: AppColors.primaryText,
                             fontSize: 15,

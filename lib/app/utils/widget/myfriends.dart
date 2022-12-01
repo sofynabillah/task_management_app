@@ -40,7 +40,7 @@ class MyFriends extends StatelessWidget {
                     ),
                   ),
                   Icon(
-                    Ionicons.chevron_forward,
+                    Icons.navigate_next,
                     color: AppColors.primaryText,
                   )
                 ],
