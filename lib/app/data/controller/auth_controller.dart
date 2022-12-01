@@ -62,7 +62,7 @@ class AuthController extends GetxController {
         'lastLoginAt':
             _userCredential!.user!.metadata.lastSignInTime.toString(),
         // 'list_cari': [S, SO, SOF, SOFY]
-      }).then((value) {
+      }).then((value) async {
         String temp = '';
         try {
           for (var i = 0; i < googleUser.displayName!.length; i++) {
@@ -76,7 +76,7 @@ class AuthController extends GetxController {
         }
       });
     } else {
-      users.doc(googleUser.email).set({
+      users.doc(googleUser.email).update({
         'lastLoginAt':
             _userCredential!.user!.metadata.lastSignInTime.toString(),
       });
@@ -107,6 +107,7 @@ class AuthController extends GetxController {
 
       if (ketaCari.isNotEmpty) {
         ketaCari.forEach((element) {
+          hasilPencarian.value = [];
           print(element);
           hasilPencarian.add(element);
         });
