@@ -20,67 +20,70 @@ class FriendsView extends GetView<FriendsController> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _drawerKey,
-      drawer: const SideBar(),
+      drawer: const SizedBox(width: 150, child: SideBar()),
       backgroundColor: AppColors.primaryBg,
-      body: Row(
-        children: [
-          !context.isPhone
-              ? const Expanded(
-                  flex: 2,
-                  child: SideBar(),
-                )
-              : const SizedBox(),
-          Expanded(
-            flex: 15,
-            child: Column(children: [
-              !context.isPhone
-                  ? const header()
-                  : Container(
-                      padding: const EdgeInsets.all(20),
-                      child: Row(
-                        children: [
-                          IconButton(
-                            onPressed: () {
-                              _drawerKey.currentState!.openDrawer();
-                            },
-                            icon: const Icon(Icons.menu,
-                                color: AppColors.primaryText),
-                          ),
-                          const SizedBox(
-                            width: 15,
-                          ),
-                          Column(
-                            // mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const Text(
-                                'Task Management',
-                                style: TextStyle(
-                                    fontSize: 20, color: AppColors.primaryText),
-                              ),
-                              const Text(
-                                'Manage task made easy with friends',
-                                style: TextStyle(
-                                    fontSize: 14, color: AppColors.primaryText),
-                              ),
-                            ],
-                          ),
-                          const Spacer(),
-                          const Icon(Icons.notifications,
-                              color: AppColors.primaryText, size: 30),
-                          const SizedBox(
-                            width: 15,
-                          ),
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(30),
-                            child: const CircleAvatar(
-                              backgroundColor: Colors.amber,
-                              radius: 25,
-                              foregroundImage: NetworkImage(
-                                  'https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/27/08/jennifer-lawrence.jpg?quality=75&width982&height=726&auto=webp'),
+      body: SafeArea(
+        child: Row(
+          children: [
+            !context.isPhone
+                ? const Expanded(
+                    flex: 2,
+                    child: SideBar(),
+                  )
+                : const SizedBox(),
+            Expanded(
+              flex: 15,
+              child: Column(children: [
+                !context.isPhone
+                    ? const header()
+                    : Container(
+                        padding: const EdgeInsets.all(20),
+                        child: Row(
+                          children: [
+                            IconButton(
+                              onPressed: () {
+                                _drawerKey.currentState!.openDrawer();
+                              },
+                              icon: const Icon(Icons.menu,
+                                  color: AppColors.primaryText),
                             ),
-                          ),
-                        ],
+                            const SizedBox(
+                              width: 15,
+                            ),
+                            Column(
+                              // mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text(
+                                  'Task Management',
+                                  style: TextStyle(
+                                      fontSize: 20,
+                                      color: AppColors.primaryText),
+                                ),
+                                const Text(
+                                  'Manage task made easy with friends',
+                                  style: TextStyle(
+                                      fontSize: 14,
+                                      color: AppColors.primaryText),
+                                ),
+                              ],
+                            ),
+                            const Spacer(),
+                            const Icon(Icons.notifications,
+                                color: AppColors.primaryText, size: 30),
+                            const SizedBox(
+                              width: 15,
+                            ),
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(30),
+                              child: const CircleAvatar(
+                                backgroundColor: Colors.amber,
+                                radius: 25,
+                                foregroundImage: NetworkImage(
+                                    'https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/27/08/jennifer-lawrence.jpg?quality=75&width982&height=726&auto=webp'),
+                              ),
+                              ),
+                          ],
                       ),
                     ),
               //content / isi page / screen
@@ -96,7 +99,7 @@ class FriendsView extends GetView<FriendsController> {
                     color: Colors.white,
                     borderRadius: !context.isPhone
                         ? BorderRadius.circular(50)
-                        : BorderRadius.circular(20),
+                        : BorderRadius.circular(10),
                   ),
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -162,7 +165,7 @@ class FriendsView extends GetView<FriendsController> {
                             },
                           ),
                         ),
-                        MyFriends()
+                        const MyFriends()
                       ]),
                 ),
               )
